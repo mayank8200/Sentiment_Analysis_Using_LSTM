@@ -1,0 +1,63 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!DOCTYPE html><html lang='en' class=''>
+<head>
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styling.css')}}">-->
+  <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><link rel='stylesheet prefetch' href='https://www.jqueryscript.net/demo/jQuery-Plugin-To-Create-Responsive-Scrolling-Bootstrap-Tabs/jquery.scrolling-tabs.css'><link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'><link rel='stylesheet prefetch' href='https://www.bts.com/fonts/digital-icons/style.css'>
+
+</head><body>
+		<div class="col-lg-12">
+			<h2>Enter the Text to get the Sentiment</h2>
+		</div>
+	  
+
+
+        <div class="col-md-6">
+          <div class = "input-group">
+             <span class = "input-group-addon">Enter Text Here</span>
+             <form action="/sentiment_analysis_prediction" method="post" enctype="multipart/form-data">
+             <input name = "text" class = "form-control" placeholder = "Text">
+             <input type="submit">
+             </form>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h1>Sentiment</h1>
+          <div class="alert alert-primary" role="alert">
+            {% if probability %}
+              {{ sentiment }}
+               {% endif %}
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <h1>Probability</h1>
+          <div class="alert alert-primary" role="alert">
+            {% if probability %}
+              {{ probability }}
+               {% endif %}
+          </div>
+        </div>
+
+        <!--Image -->
+            <div class="col-sm-6"></div>
+              {% if probability %}
+                <div class="col-sm-2"><h1>Emotion</h1>
+                <img src="{{ image }}" alt="Image">
+              {% endif %}
+            </div>
+        <!--Image-->
+      </div>
+    </div>
+	</div>
+
+</div>
+
+</body></html>
