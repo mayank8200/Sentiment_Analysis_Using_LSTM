@@ -4,7 +4,7 @@ Keras==2.4.3
 Keras-Preprocessing==1.1.2
 numpy==1.19.5
 pandas==0.25.1
-tensorflow==2.0.0
-tensorflow-estimator==2.0.0
+tensorflow==2.2.0
+tensorflow-estimator==2.2.0
 
 
